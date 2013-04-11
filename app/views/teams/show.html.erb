@@ -1,8 +1,14 @@
 <h1><%= @team.name %></h1>
 <table class="table table-border">
 	<tr>
+<td><h3> Supervisor:</h3> </td><td><h3><%= @team.supervisor.name %></h3></td>
+</tr>
+<tr>
+	<td><h3>Members:</h3></td>
+</tr>
+	<tr>
 		<% @team.members.each do |member| %>
-		  <td><%= member.name %></td>
+		  <td><h4><%= member.name %></h4></td>
 		<% end %>
 	</tr>
 </table>

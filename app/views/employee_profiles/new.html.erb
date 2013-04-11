@@ -1,6 +1,6 @@
 <div class="container">
 
-	<h1>New Employee!</h1>
+	<h1>New f!</h1>
 
 	<%= form_for(@employee) do |f| %>
 	
@@ -9,7 +9,13 @@
 	  <ul class="inline">
 	    <li><%= profile_fields.label :name %></li>
 	    <li><%= profile_fields.text_field :name %></li>
-	</ul>
+	  </ul>
+	  <br>
+	  <div class="input-append">
+		  <%= profile_fields.label :height %>
+		  <%= profile_fields.height :height %>
+		  <span class="add-on">cm</span>
+	  </div>
 	  <% end %>
 	
 	
@@ -17,7 +23,7 @@
 		  <li>Supervisor</li>
 		  <li><%= f.collection_select( :supervisor_id,   EmployeeProfile.all, :employee_id, :name ) %>
 	  </ul>
-	
+	  dssfdfs
 	  <%= f.submit "Create New Employee"%>
 		
 	<% end %>
