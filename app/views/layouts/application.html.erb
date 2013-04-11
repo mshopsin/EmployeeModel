@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <a class="brand" href="#">Links</a>
+	    <ul class="nav navbar-inverse">
+			<li><%= link_to "Employees", employees_path %></li>
+				
+			    </ul>
+			   </div>
+			 </div>
+			
 
-<%= yield %>
-
+	</div>
+	
+<div class="well">
+	<%= yield %>
+</div>
 </body>
 </html>

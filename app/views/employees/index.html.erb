@@ -1,2 +1,17 @@
-<h1>Employees#index</h1>
-<p>Find me in app/views/employees/index.html.erb</p>
+
+<div class="container">
+	<h1>Employees</h1>
+	<table class="table">
+		<tr>
+			<th>Employee</th><th>Supervisor</tr>
+			</tr>
+	<% @employees.each do |employee| %>
+	<tr>
+	  <td><%= employee.name %></td>
+	  <td><%= employee.supervisor.name unless employee.supervisor_id.nil? %></td>
+	</tr>
+	<% end %>
+	</table>
+	<br>
+	<%= link_to "Add New User", new_employee_path %>
+</div>
