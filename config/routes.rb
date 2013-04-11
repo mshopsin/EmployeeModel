@@ -1,4 +1,52 @@
 EmployeeDB::Application.routes.draw do
+  get "employee_profiles/index"
+
+  get "employee_profiles/new"
+
+  get "employee_profiles/create"
+
+  get "employee_profiles/show"
+
+  get "employee_profiles/delete"
+
+  get "employee_profiles/destroy"
+
+  get "team_memberships/index"
+
+  get "team_memberships/new"
+
+  get "team_memberships/create"
+
+  get "team_memberships/show"
+
+  get "team_memberships/delete"
+
+  get "team_memberships/destroy"
+
+  get "teams/index"
+
+  get "teams/new"
+
+  get "teams/create"
+
+  get "teams/show"
+
+  get "teams/delete"
+
+  get "teams/destroy"
+
+  get "employees/index"
+
+  get "employees/new"
+
+  get "employees/create"
+
+  get "employees/show"
+
+  get "employees/delete"
+
+  get "employees/destroy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
