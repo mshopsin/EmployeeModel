@@ -1,2 +1,26 @@
-<h1>Teams#new</h1>
-<p>Find me in app/views/teams/new.html.erb</p>
+<h1>Create a New Team</h1>
+
+<%= form_for @team do |f| %>
+<div class="control-group">
+	<ul class="inline">
+	  <li><%= f.label :name %></li>
+	  <li><%= f.text_field :name %></li>
+	  <li><%= f.label :supervisor_id %></li>
+	  <li><%= f.collection_select( :supervisor_id, Employee.all, :id, :name  )%></li>
+	</ul>
+	<div class="controls">
+		<% Employee.all.each do |employee| %>
+		  <label class="inline">
+		  	  <input type="checkbox" name="team[member_ids][]" value="<%= employee.id %>" >
+			  <%= employee.name %>
+		  <label>
+		<% end %>
+	</div>
+	<br>
+	
+	<%= f.submit "Create Team"%>
+	</div>
+<% end %>
+
+
+

@@ -1,6 +1,7 @@
 EmployeeDB::Application.routes.draw do
   resources :employees, :only => [ :index, :new, :create ]
   resources :employee_profiles, :only => [ :new, :create ]
+  resources :teams, :only => [ :index, :new, :create, :show ]
   # get "employee_profiles/index"
   # 
   # get "employee_profiles/new"

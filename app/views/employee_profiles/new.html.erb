@@ -1,2 +1,25 @@
-<h1>EmployeeProfiles#new</h1>
-<p>Find me in app/views/employee_profiles/new.html.erb</p>
+<div class="container">
+
+	<h1>New Employee!</h1>
+
+	<%= form_for(@employee) do |f| %>
+	
+	
+	  <br>
+	  <ul class="inline">
+	    <li><%= profile_fields.label :name %></li>
+	    <li><%= profile_fields.text_field :name %></li>
+	</ul>
+	  <% end %>
+	
+	
+	  <ul class="inline">
+		  <li>Supervisor</li>
+		  <li><%= f.collection_select( :supervisor_id,   EmployeeProfile.all, :employee_id, :name ) %>
+	  </ul>
+	
+	  <%= f.submit "Create New Employee"%>
+		
+	<% end %>
+
+</div>

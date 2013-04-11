@@ -1,2 +1,8 @@
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
+<h1><%= @team.name %></h1>
+<table class="table table-border">
+	<tr>
+		<% @team.members.each do |member| %>
+		  <td><%= member.name %></td>
+		<% end %>
+	</tr>
+</table>
