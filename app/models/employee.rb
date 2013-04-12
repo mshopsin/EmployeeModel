@@ -3,7 +3,7 @@ class Employee < ActiveRecord::Base
   
   has_many :team_memberships
   has_many :teams, :through => :team_membership
-  has_one :employee_profile
+  has_one :employee_profile, :dependent => :destroy
   belongs_to :supervisor, :class_name => "Employee"
    accepts_nested_attributes_for :employee_profile
    

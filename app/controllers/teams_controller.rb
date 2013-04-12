@@ -11,8 +11,10 @@ class TeamsController < ApplicationController
     @team = Team.new(params[:team])
   
     if @team.save
+      flash[:success] = "Succesfully Created a New Team"
       redirect_to teams_path
     else
+      flash[:success] = "An Error Has Occured"
       render :new
     end
   end
@@ -22,6 +24,7 @@ class TeamsController < ApplicationController
   end
 
   def delete
+    #Team.find(params[:id]).destroy
   end
 
   def destroy

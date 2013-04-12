@@ -9,11 +9,19 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = Employee.new(params[:employee])
-    if @employee.save
-      redirect_to employees_path
-    else
-      render 'new'
+    begin
+      @employee = Employee.new(params[:employee])
+      if @employee.save
+        flash[:success] = "Succesfully Created new employee"
+        redirect_to employees_path
+      else
+        flash[:error] ="Problem Occured in Making New Employee"
+        render 'new'
+      end
+      rescue
+        flash[:error] ="Problem Occured in Making New Employee"
+        #redirect_to new_employee_path(@employee)
+        render 'new'
     end
   end
 
@@ -21,6 +29,7 @@ class EmployeesController < ApplicationController
   end
 
   def delete
+    Employee.find(params[:id]).destroy
   end
 
   def destroy

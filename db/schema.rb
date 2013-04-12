@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411221259) do
+ActiveRecord::Schema.define(:version => 20130411234502) do
 
   create_table "employee_profiles", :force => true do |t|
     t.integer  "employee_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20130411221259) do
     t.integer  "salary"
     t.string   "photo"
   end
+
+  add_index "employee_profiles", ["name"], :name => "index_employee_profiles_on_name", :unique => true
 
   create_table "employees", :force => true do |t|
     t.integer  "employee_profile_id"

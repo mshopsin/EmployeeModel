@@ -10,6 +10,25 @@
 	    <li><%= profile_fields.label :name %></li>
 	    <li><%= profile_fields.text_field :name %></li>
 	</ul>
+	
+  <div class="input-append">
+	   <span class="add-on">
+	  <%= profile_fields.label :height %>
+	  </span>
+	  <%= profile_fields.text_field :height %>
+	  <span class="add-on">cm</span>
+  </div>
+  <br>
+  <div class="input-append">
+	   <span class="add-on">
+		   age
+	  </span>
+	  <%= profile_fields.select :age, options_for_select( ages ) %>
+	  <span class="add-on">years</span>
+  </div>
+
+	
+	
 	  <% end %>
 	
 	

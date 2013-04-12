@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
+  <div class="container">
+	  <% flash.each do |key, value| %>
+	      <div class="alert alert-<%= key %>"><%= value %></div>
+	  <% end %>
 	<div class="navbar">
 	  <div class="navbar-inner">
 	    <a class="brand" href="#">Links</a>
@@ -24,6 +27,7 @@
 	
 <div class="well">
 	<%= yield %>
+</div>
 </div>
 </body>
 </html>
